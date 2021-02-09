@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Ragnaros
   m_EditorClassIdentifier: 
   name: Ragnaros, The Fire Lord
-  description: Burn, insect!
+  description: 
   manaCost: 8
   health: 8
   attack: 8

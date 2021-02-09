@@ -1252,6 +1252,36 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 6.869999
       objectReference: {fileID: 0}
+    - target: {fileID: 4653811602553570219, guid: bff6b702af6ca9f4e861e5e08819064a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4653811602553570219, guid: bff6b702af6ca9f4e861e5e08819064a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4653811602553570219, guid: bff6b702af6ca9f4e861e5e08819064a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1224889070}
+    - target: {fileID: 4653811602553570219, guid: bff6b702af6ca9f4e861e5e08819064a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4653811602553570219, guid: bff6b702af6ca9f4e861e5e08819064a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 4653811602553570219, guid: bff6b702af6ca9f4e861e5e08819064a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4653811602553570220, guid: bff6b702af6ca9f4e861e5e08819064a,
         type: 3}
       propertyPath: m_Pivot.x
