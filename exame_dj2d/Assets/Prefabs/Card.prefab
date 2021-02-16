@@ -382,9 +382,11 @@ GameObject:
   - component: {fileID: 1057320129059285587}
   - component: {fileID: 1057320129059285586}
   - component: {fileID: 1057320129059285589}
+  - component: {fileID: -6854009829728025963}
+  - component: {fileID: 1002249405845677029}
   m_Layer: 5
   m_Name: Card
-  m_TagString: Untagged
+  m_TagString: PlayerCard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -398,7 +400,7 @@ RectTransform:
   m_GameObject: {fileID: 1057320129059285584}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3375117, y: 0.3375117, z: 0.3375117}
   m_Children:
   - {fileID: 1057320128918995575}
   - {fileID: 1057320128750073312}
@@ -435,13 +437,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e7ec173feb2bbc4099fabe1eefb8828, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minionTemplate: {fileID: 8482363170158504775, guid: df2fa6fc0faab784da4dbac4cae4328d,
+    type: 3}
   cardInfo: {fileID: 0}
+  manaCost: 0
+  attack: 0
+  health: 0
+  artwork: {fileID: 0}
+  description: 
   nameText: {fileID: 1057320129978406808}
   descriptionText: {fileID: 1057320129406786585}
   manaText: {fileID: 1057320129295416951}
   attackText: {fileID: 1057320129499596889}
   healthText: {fileID: 1057320128310521830}
-  artwork: {fileID: 1057320128513983899}
+  artworkImage: {fileID: 1057320128513983899}
+--- !u!114 &-6854009829728025963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057320129059285584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c109a25bbcb40a43bd9099cfa49dcd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DragAreaPanel: {fileID: 0}
+  PlayerHand: {fileID: 0}
+  myCanvas: {fileID: 0}
+--- !u!225 &1002249405845677029
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057320129059285584}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1057320129295416949
 GameObject:
   m_ObjectHideFlags: 0

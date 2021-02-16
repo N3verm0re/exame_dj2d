@@ -8,21 +8,26 @@ using UnityEngine.UI;
 
 public class CardController : MonoBehaviour
 {
+    public GameObject minionTemplate;
+
     public Card cardInfo;
 
     public int manaCost;
     public int attack;
     public int health;
+    public Sprite artwork;
+    public string description;
 
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI descriptionText;
     public TextMeshProUGUI manaText;
     public TextMeshProUGUI attackText;
     public TextMeshProUGUI healthText;
-    public Image artwork;
+    public Image artworkImage;
 
     private void Start()
     {
+        /*
         if (cardInfo != null)
         {
             GetCardInfo();
@@ -31,20 +36,19 @@ public class CardController : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+        */
 
-        TakeDamage(2);
+        GetCardInfo();
+        UpdateCardInfo();
     }
     public void GetCardInfo()
     {
         nameText.text = cardInfo.name;
-        descriptionText.text = cardInfo.description;
-        manaText.text = cardInfo.manaCost.ToString();
+        description = cardInfo.description;
         manaCost = cardInfo.manaCost;
-        attackText.text = cardInfo.attack.ToString();
         attack = cardInfo.attack;
-        healthText.text = cardInfo.health.ToString();
         health = cardInfo.health;
-        artwork.sprite = cardInfo.cardSprite;
+        artwork = cardInfo.cardSprite;
 
         if (cardInfo.name.Length > 11)
         {
@@ -61,17 +65,20 @@ public class CardController : MonoBehaviour
         manaText.text = manaCost.ToString();
         attackText.text = attack.ToString();
         healthText.text = health.ToString();
+        descriptionText.text = description;
+        artworkImage.sprite = artwork;
     }
 
-    public void TakeDamage(int damage)
+    public void PlayCard()
     {
-        health -= damage;
-        UpdateCardInfo();
-        if (health <= 0) { Die(); }
-    }
+        Transform playerBoard = GameObject.FindGameObjectWithTag("PlayerBoard").transform;
 
-    public void Die()
-    {
+        GameObject minion = Instantiate(minionTemplate, playerBoard);
+
+        minion.GetComponent<MinionController>().health = this.health;
+        minion.GetComponent<MinionController>().attack = this.attack;
+        minion.GetComponent<MinionController>().artwork = this.artwork;
+
         Destroy(this.gameObject);
     }
 }
