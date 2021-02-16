@@ -9,6 +9,10 @@ TagManager:
   - PlayerCard
   - PlayerBoard
   - PlayerMinion
+  - EnemyBoard
+  - EnemyMinion
+  - PlayerHero
+  - Menu
   layers:
   - Default
   - TransparentFX

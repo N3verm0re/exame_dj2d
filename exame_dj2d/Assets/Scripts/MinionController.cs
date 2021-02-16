@@ -7,8 +7,10 @@ using UnityEngine.UI;
 
 public class MinionController : MonoBehaviour
 {
-    public int health;
-    public int attack;
+    public Card backupMinionInfo;
+
+    public int health = -1;
+    public int attack = -1;
     public bool isAsleep = true;
     public Sprite artwork;
 
@@ -19,7 +21,22 @@ public class MinionController : MonoBehaviour
 
     private void Start()
     {
-        UpdateMinionInfo();
+        if (health == -1 || attack == -1 || artwork == null)
+        {
+            GetMinionInfoFromBackup(); 
+            UpdateMinionInfo();
+        }
+        else
+        {
+            UpdateMinionInfo();
+        }
+    }
+
+    public void GetMinionInfoFromBackup()
+    {
+        health = backupMinionInfo.health;
+        attack = backupMinionInfo.attack;
+        artwork = backupMinionInfo.cardSprite;
     }
 
     public void UpdateMinionInfo()

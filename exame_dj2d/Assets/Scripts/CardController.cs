@@ -74,6 +74,7 @@ public class CardController : MonoBehaviour
         Transform playerBoard = GameObject.FindGameObjectWithTag("PlayerBoard").transform;
 
         GameObject minion = Instantiate(minionTemplate, playerBoard);
+        minion.tag = "PlayerMinion";
 
         minion.GetComponent<MinionController>().health = this.health;
         minion.GetComponent<MinionController>().attack = this.attack;

@@ -20,8 +20,9 @@ public class DropArea : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
         Debug.Log($"{eventData.pointerDrag.name} was dropped on {this.name}");
 
         CardController card = eventData.pointerDrag.GetComponent<CardController>();
-        if (card != null && card.CompareTag("PlayerCard") && card.manaCost <= Manager.Instance.playerMana)
+        if (card != null && card.CompareTag("PlayerCard") && card.manaCost <= Manager.Instance.playerMana && GameObject.FindGameObjectsWithTag("PlayerMinion").Length < 7)
         {
+            Manager.Instance.playerMana -= card.manaCost;
             card.PlayCard();
         }
     }
